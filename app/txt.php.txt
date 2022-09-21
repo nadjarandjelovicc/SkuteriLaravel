@@ -1,0 +1,44 @@
+
+//vraca sve rez
+GET http://localhost/bicikle/public/api/rez HTTP/1.1
+
+###
+//radi pretragu rez po destinaciji, skup karaktera se trazi
+GET http://localhost/bicikle/public/api/rez/search/Ra HTTP/1.1
+###
+//unosi novu rez
+POST http://localhost/bicikle/public/api/rez HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+
+"ime":"Ivan",
+"prezime":"A",
+"datum_preuzimanja":"2023-01-01",
+"kontakt":"011123456",
+"brDana":"1",
+"bicikla_id":"1",
+"user_id":"1"
+
+}
+
+###
+###
+//menja rez sa indexom 1
+PUT http://localhost/bicikle/public/api/rez/1
+Content-Type: application/json
+Accept: application/json
+
+{
+"ime":"Marko"
+}
+###
+
+DELETE http://localhost/bicikle/public/api/rez/1
+
+###
+//get prikazuje samo 1 rez
+ GET  http://localhost/bicikle/public/api/rez/1
+
+ ###
